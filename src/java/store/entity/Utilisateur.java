@@ -42,7 +42,7 @@ public class Utilisateur implements Serializable {
     
     private String adresseLivraison;
 
-    @OneToMany(mappedBy = "client")
+    @OneToMany(mappedBy = "utilisateur")
     private List<Commande> commandes = new ArrayList<>();
     
     public Long getId() {
@@ -51,6 +51,46 @@ public class Utilisateur implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getMdp() {
+        return mdp;
+    }
+
+    public void setMdp(String mdp) {
+        this.mdp = mdp;
+    }
+
+    public TypeUtil getTypeUtil() {
+        return typeUtil;
+    }
+
+    public void setTypeUtil(TypeUtil typeUtil) {
+        this.typeUtil = typeUtil;
+    }
+
+    public String getAdresseLivraison() {
+        return adresseLivraison;
+    }
+
+    public void setAdresseLivraison(String adresseLivraison) {
+        this.adresseLivraison = adresseLivraison;
+    }
+
+    public List<Commande> getCommandes() {
+        return commandes;
+    }
+
+    public void setCommandes(List<Commande> commandes) {
+        this.commandes = commandes;
     }
 
     @Override

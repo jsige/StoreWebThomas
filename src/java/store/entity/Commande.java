@@ -51,9 +51,9 @@ public class Commande implements Serializable {
     @JoinColumn(name = "client_id")
     private Utilisateur utilisateur;
     
-    @JoinTable(name="CdeArt")
     @ManyToMany
-    List<Commande> commandes = new ArrayList<>();
+    private List<Article> articles = new ArrayList<>();       
+    
     
     public Long getId() {
         return id;
@@ -61,6 +61,38 @@ public class Commande implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Date getDateCommande() {
+        return dateCommande;
+    }
+
+    public void setDateCommande(Date dateCommande) {
+        this.dateCommande = dateCommande;
+    }
+
+    public Etat getEtat() {
+        return etat;
+    }
+
+    public void setEtat(Etat etat) {
+        this.etat = etat;
+    }
+
+    public Utilisateur getUtilisateur() {
+        return utilisateur;
+    }
+
+    public void setUtilisateur(Utilisateur utilisateur) {
+        this.utilisateur = utilisateur;
+    }
+
+    public List<Article> getArticles() {
+        return articles;
+    }
+
+    public void setArticles(List<Article> articles) {
+        this.articles = articles;
     }
 
     @Override
