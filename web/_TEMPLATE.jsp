@@ -16,7 +16,7 @@
         
     </head>
     <body>
-        <a href="films_liste">
+        <a href="accueil">
             <div class="titre">
                 <c:import url="_TITRE.jsp" />
             </div>

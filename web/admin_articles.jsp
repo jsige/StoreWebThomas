@@ -25,13 +25,28 @@
             <c:import url="_MENU.jsp" />
         </div>
         <div class="contenu">
-            <h1>Bienvenue sur le WebStore, ${util.login}</h1>
+            <h1>Gestion des Articles</h1>
             <br />
             <br />
-<!--            <h2>Connectez-vous pour accéder au WebStore</h2> 
-            <br />
-            <br />
-            <form method="post">
+
+            <li>
+                <ul>
+                    <a href="AdminListerArticle">Lister les article</a>
+                </ul>
+                <ul>
+                    <a href="AdminAjouterArticle">Ajouter un article</a>
+                </ul>
+                <ul>
+                    <a href="AdminStock">Modifier un article</a>
+                </ul>
+<!--                <ul>
+                    <a href="AdminCommandes">Gérer les commandes</a>
+                </ul>-->
+            </li>
+            <h3>
+                    
+            </h3>
+<!--            <form method="post">
                 <h3>
                     Login : 
                     <input name="login">

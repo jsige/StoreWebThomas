@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Bienvenue sur le WebStore</title>
+        <title>Inscrivez-vous sur le WebStore</title>
         <c:import url="_STYLESHEET.jsp" />
         
         
@@ -25,10 +25,11 @@
             <c:import url="_MENU.jsp" />
         </div>
         <div class="contenu">
-            <h1>Bienvenue sur le WebStore, ${util.login}</h1>
+            <h1>Bienvenue sur le WebStore, futur nouveau client</h1>
             <br />
+            <h2>${erreur}</h2>
             <br />
-<!--            <h2>Connectez-vous pour accéder au WebStore</h2> 
+            <h2>Veuillez renseigner les champs suivants</h2> 
             <br />
             <br />
             <form method="post">
@@ -40,13 +41,20 @@
                     Mot de passe : 
                     <input name="mdp">
                 </h3>
+                <h3>
+                    Mot de passe : 
+                    <input name="conf_mdp">
+                </h3>
+                <h3>
+                    Adresse : 
+                    <textarea name="adresse" value=''>
+                    </textarea>
+                </h3>
                 <br />
                 <br />
-                <input type="submit" value="Connexion" />
+                <input type="submit" value="Créer" />
             </form> 
-            <h3>
-                <a href="creer_compte">Créer un compte</a>
-            </h3>-->
+            
              
         </div>
         <div class="pied">

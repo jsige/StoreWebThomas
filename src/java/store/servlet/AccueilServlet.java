@@ -23,25 +23,50 @@ import store.service.UtilisateurService;
 public class AccueilServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("accueil.jsp").forward(req, resp);
+
+        Utilisateur utilDejaConnecte = (Utilisateur) req.getSession().getAttribute("util");
+        if (utilDejaConnecte != null) {
+            //req.getSession().setAttribute("util", utilLogge);
+            if (utilDejaConnecte.getTypeUtil() == Utilisateur.TypeUtil.ADMIN) {
+                resp.sendRedirect("adminaccueil");
+            } else {
+                resp.sendRedirect("accueil_client");
+            }
+
+        } else {
+            //req.setAttribute("erreur", "Une erreur de login ou de mote de pssse");
+            req.getRequestDispatcher("accueil.jsp").forward(req, resp);
+            //resp.sendRedirect("accueil");
+        }
+
+        //req.getRequestDispatcher("accueil.jsp").forward(req, resp);
     }
-    
+
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getSession().removeAttribute("TypeUtil");
         String login = req.getParameter("login");
         String mdp = req.getParameter("mdp");
-        
+
         UtilisateurService utilServ = new UtilisateurService();
-        
-        Utilisateur utilLogge = utilServ.ControlerLoginMdp(login,mdp);
-        
-        if(utilLogge!=null){
+
+        Utilisateur utilLogge = utilServ.controlerLoginMdp(login, mdp);
+
+        if (utilLogge != null) {
             req.getSession().setAttribute("util", utilLogge);
-            
-            resp.sendRedirect("accueil_client");
-        }
-        else{
+//            if (utilLogge.getTypeUtil() == Utilisateur.TypeUtil.ADMIN) {
+//                resp.sendRedirect("adminaccueil");
+//            } else {
+//                resp.sendRedirect("accueil_client");
+//            }
+//
+//        } else {
+//            resp.sendRedirect("accueil");
+//        }
             resp.sendRedirect("accueil");
+        } //resp.sendRedirect("accueil");
+        else {
+            req.setAttribute("erreur", "Une erreur de login ou de mote de pssse, ou ce compte n'existe pas.");
+            req.getRequestDispatcher("accueil.jsp").forward(req, resp);
         }
     }
 }

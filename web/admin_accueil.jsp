@@ -28,10 +28,24 @@
             <h1>Bienvenue sur le WebStore, ${util.login}</h1>
             <br />
             <br />
-<!--            <h2>Connectez-vous pour accéder au WebStore</h2> 
+            <h2>Vous êtres connecté en tant qu'administrateur</h2> 
             <br />
             <br />
-            <form method="post">
+            <li>
+                <ul>
+                    <a href="AdminArticles">Gérer les articles</a>
+                </ul>
+                <ul>
+                    <a href="AdminStock">Gérer les stocks</a>
+                </ul>
+                <ul>
+                    <a href="AdminCommandes">Gérer les commandes</a>
+                </ul>
+            </li>
+            <h3>
+                    
+            </h3>
+<!--            <form method="post">
                 <h3>
                     Login : 
                     <input name="login">

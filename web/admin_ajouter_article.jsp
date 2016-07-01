@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Bienvenue sur le WebStore</title>
+        <title>Inscrivez-vous sur le WebStore</title>
         <c:import url="_STYLESHEET.jsp" />
         
         
@@ -25,28 +25,33 @@
             <c:import url="_MENU.jsp" />
         </div>
         <div class="contenu">
-            <h1>Bienvenue sur le WebStore, ${util.login}</h1>
+            <h1>Ajouter un article au StoreWeb</h1>
             <br />
+            <h2>
+                ${message_creation_article}
+            </h2>
             <br />
-<!--            <h2>Connectez-vous pour accéder au WebStore</h2> 
+            <h2>Veuillez renseigner les champs suivants</h2> 
             <br />
             <br />
             <form method="post">
                 <h3>
-                    Login : 
-                    <input name="login">
+                    Nom de l'article : 
+                    <input name="nom_article">
                 </h3>
                 <h3>
-                    Mot de passe : 
-                    <input name="mdp">
+                    Prix unitaire : 
+                    <input name="prix_article">
+                </h3>
+                <h3>
+                    Quantité en stock : 
+                    <input name="stock_article">
                 </h3>
                 <br />
                 <br />
-                <input type="submit" value="Connexion" />
+                <input type="submit" value="Créer l'article" />
             </form> 
-            <h3>
-                <a href="creer_compte">Créer un compte</a>
-            </h3>-->
+            
              
         </div>
         <div class="pied">
